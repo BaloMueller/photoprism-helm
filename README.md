@@ -3,6 +3,8 @@ Helm chart to install [PhotoPrism](https://photoprism.org/).
 
 PhotoPrism is a server-based application for browsing, organizing, and sharing your personal photo collection.
 
+It hasn't been updated for a while, so I'm keeping a working fork clicking along here
+
 
 ## TL;DR;
 
