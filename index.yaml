@@ -1,6 +1,22 @@
 apiVersion: v1
 entries:
   photoprism:
+  - apiVersion: v2
+    appVersion: "20240402"
+    created: "2024-04-03T00:50:25.318428+02:00"
+    description: A Photoprism Helm chart for Kubernetes
+    digest: ee3aaedaf3e34d1feed4c1b1b99c64c82c3a47e20aa28228bf6261eee2fba723
+    home: https://photoprism.org/
+    icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbzStcQdLoPIDhauAfdfnCI5yS1GOY2ZL5vG82wphyIg&s
+    maintainers:
+    - name: BaloMueller
+      url: https://github.com/BaloMueller
+    name: photoprism
+    sources:
+    - https://github.com/BaloMueller/photoprism-helm
+    urls:
+    - photoprism-1.0.0.tgz
+    version: 1.0.0
   - apiVersion: v1
     appVersion: "20190703"
     created: "2024-03-25T13:05:28.800685+01:00"
@@ -13,4 +29,4 @@ entries:
     urls:
     - https://balomueller.github.io/photoprism-helm/photoprism-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-25T13:05:28.800061+01:00"
+generated: "2024-04-03T00:50:25.31844+02:00"
