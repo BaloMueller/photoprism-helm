@@ -9,8 +9,8 @@ It hasn't been updated for a while, so I'm keeping a working fork clicking along
 ## TL;DR;
 
 ```bash
-helm repo add p80n https://p80n.github.io/photoprism-helm/
-helm install photoprism p80n/photoprism --set persistence.enabled=false
+helm repo add BaloMueller https://BaloMueller.github.io/photoprism-helm/
+helm install photoprism BaloMueller/photoprism --set persistence.enabled=false
 ```
 
 ## Introduction
@@ -31,7 +31,7 @@ the experience:
 To install the chart with the release name `my-release`:
 
 ```bash
-helm install photoprism p80n/photoprism --create-namespace --namespace photoprism -f values.yaml
+helm install photoprism BaloMueller/photoprism --create-namespace --namespace photoprism -f values.yaml
 ```
 
 
@@ -46,7 +46,7 @@ See values.yaml for a more complete listing.
 | <span style="font-family: monospace">adminPassword</span>       | Password for admin account | photoprism |
 | <span style="font-family: monospace">existingSecret</span>         | Use existing secret for admin account (key PHOTOPRISM_ADMIN_PASSWORD) | |
 | <span style="font-family: monospace">image.repository</span>       | Image repository | <span style="font-family: monospace">photoprism/photoprism</span> |
-| <span style="font-family: monospace">image.tag</span>              | Image tag | <span style="font-family: monospace">20210222</span> |
+| <span style="font-family: monospace">image.tag</span>              | Image tag | <span style="font-family: monospace">20240402</span> |
 | <span style="font-family: monospace">image.pullPolicy</span>       | Image pull policy | <span style="font-family: monospace">IfNotPresent</span> |
 | <span style="font-family: monospace">config</span>                  | Map of environment variables to configure PhotoPrism's runtime behavior | |
 | <span style="font-family: monospace">config.PHOTOPRISM_DEBUG</span> | Enable verbose logging | |
@@ -78,12 +78,12 @@ See values.yaml for a more complete listing.
 For setting nested values, it's generally easiest to just specify a YAML file that with the correct values:
 
 ```bash
-$ helm install photoprism p80n/photoprism-helm -f values.yaml
+$ helm install photoprism BaloMueller/photoprism-helm -f values.yaml
 ```
 
 You can specify each parameter using the `--set key=value[,key=value]` argument to `helm install`, but for nested values, it's complicated. For example:
 ```bash
-$ helm install photoprism p80n/photoprism-helm \
+$ helm install photoprism BaloMueller/photoprism-helm \
     --set=image.tag=latest \
     --set=volumes[0].name=originals --set=volumes[0].nfs.server=my.nfs.server --set=volumes[0].nfs.path=/path
 ```
@@ -126,6 +126,13 @@ The default values will only expose PhotoPrism inside your cluster on port 80. S
 - Configure ingress rules for use with a reverse proxy
 - Change the service type to `NodePort` and pick a [free port to expose](https://kubernetes.io/docs/concepts/services-networking/service/)
 - Access it from your client with [kubectl port-forward](https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/)
+
+## Development
+
+For uploading the Helm package using the [chart-releaser](https://github.com/helm/chart-releaser) to the repository execute:
+```
+cr upload --config .cr-config.yaml --packages-with-index --push
+```
 
 ## Need Help?
 

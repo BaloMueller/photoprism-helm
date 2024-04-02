@@ -1,7 +1,12 @@
 name: photoprism
 home: https://photoprism.org/
 description: A Photoprism Helm chart for Kubernetes
-appVersion: "20190703"
-version: 0.1.0
+appVersion: "20240402"
+version: 1.0.0
+apiVersion: v2
+icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbzStcQdLoPIDhauAfdfnCI5yS1GOY2ZL5vG82wphyIg&s
 sources:
-- https://github.com/photoprism/photoprism
+- https://github.com/BaloMueller/photoprism-helm
+maintainers:
+- name: BaloMueller
+  url: https://github.com/BaloMueller
