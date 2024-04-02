@@ -131,6 +131,8 @@ The default values will only expose PhotoPrism inside your cluster on port 80. S
 
 For uploading the Helm package using the [chart-releaser](https://github.com/helm/chart-releaser) to the repository execute:
 ```
+cr package --config .cr-config.yaml --packages-with-index --push
+cr index --config .cr-config.yaml --packages-with-index --push
 cr upload --config .cr-config.yaml --packages-with-index --push
 ```
 
