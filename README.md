@@ -78,12 +78,12 @@ See values.yaml for a more complete listing.
 For setting nested values, it's generally easiest to just specify a YAML file that with the correct values:
 
 ```bash
-$ helm install photoprism BaloMueller/photoprism-helm -f values.yaml
+$ helm install photoprism BaloMueller/photoprism -f values.yaml
 ```
 
 You can specify each parameter using the `--set key=value[,key=value]` argument to `helm install`, but for nested values, it's complicated. For example:
 ```bash
-$ helm install photoprism BaloMueller/photoprism-helm \
+$ helm install photoprism BaloMueller/photoprism \
     --set=image.tag=latest \
     --set=volumes[0].name=originals --set=volumes[0].nfs.server=my.nfs.server --set=volumes[0].nfs.path=/path
 ```
