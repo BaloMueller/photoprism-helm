@@ -1,3 +1,4 @@
 custom-values-ingress.yaml
 custom-values.yaml 
 *.tgz
+.cr-config.yaml
